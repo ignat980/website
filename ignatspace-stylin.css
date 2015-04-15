@@ -1,0 +1,27 @@
+:root {
+height:100vh;
+
+}
+#Welcome{
+	/*margin: 0 auto;
+	border-radius: 1em;*/
+	padding: 1em;
+}
+
+p.centeredText{
+    position: absolute;               
+    top: 50%;                         
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.fullContainer{
+	height: 100%;
+	width: 100%;
+    /*position: relative;*/
+}
+.noMargin{
+	margin: 0 0;
+}
