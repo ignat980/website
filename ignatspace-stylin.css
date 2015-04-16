@@ -7,8 +7,7 @@ height:100vh;
 	border-radius: 1em;*/
 	padding: 1em;
 	font-size: 4vw;
-	-webkit-tap-highlight-color: hsla(0,0%,0%,.5);
-	        tap-highlight-color: hsla(0,0%,0%,.5);
+	
 }
 #Features{
 	margin-left: 1em;
