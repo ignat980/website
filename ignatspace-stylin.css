@@ -6,12 +6,21 @@ height:100vh;
 	/*margin: 0 auto;
 	border-radius: 1em;*/
 	padding: 1em;
+	font-size: 4vw;
+	-webkit-tap-highlight-color: hsla(0,0%,0%,.5);
+	        tap-highlight-color: hsla(0,0%,0%,.5);
+}
+#Features{
+	margin-left: 1em;
+	font-size: 3vw;
 }
 
 p.centeredText{
     position: absolute;               
     top: 50%;                         
     left: 50%;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-right: -50%;
     transform: translate(-50%, -50%);
 	text-align: center;
@@ -20,6 +29,7 @@ p.centeredText{
 .fullContainer{
 	height: 100%;
 	width: 100%;
+	position: absolute;
     /*position: relative;*/
 }
 .noMargin{
