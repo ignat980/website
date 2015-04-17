@@ -7,11 +7,11 @@ height:100vh;
 	border-radius: 1em;*/
 	padding: 1em;
 	font-size: 4vw;
-	
+
 }
 #Features{
 	margin-left: 1em;
-	font-size: 3vw;
+	/*font-size: 3vw;*/
 }
 
 p.centeredText{
