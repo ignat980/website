@@ -63,6 +63,10 @@ height:100vh;
 	@include filter-gradient(#96f5ff, #ffffff, horizontal); // IE6-9 fallback on horizontal gradient
 	@include background-image(radial-gradient(center, ellipse farthest-side, #96f5ff,#ffffff));
 }
+#Welcome a{
+	text-decoration: none;
+	color: blue;
+}
 
 #Features{
 	position: absolute;

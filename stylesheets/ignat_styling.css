@@ -68,14 +68,20 @@
   background-image: radial-gradient(ellipse farthest-side at center, #96f5ff, #ffffff);
 }
 
-/* line 67, ../sass/ignat_styling.scss */
+/* line 66, ../sass/ignat_styling.scss */
+#Welcome a {
+  text-decoration: none;
+  color: blue;
+}
+
+/* line 71, ../sass/ignat_styling.scss */
 #Features {
   position: absolute;
   margin-left: 1em;
   font-size: 1em;
 }
 
-/* line 73, ../sass/ignat_styling.scss */
+/* line 77, ../sass/ignat_styling.scss */
 #smiley {
   height: 4em;
   width: 100%;
@@ -83,7 +89,7 @@
   bottom: 0;
 }
 
-/* line 80, ../sass/ignat_styling.scss */
+/* line 84, ../sass/ignat_styling.scss */
 #smileyImg {
   height: 2em;
   width: 2em;
