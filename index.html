@@ -3,43 +3,50 @@
 	<head>
 		<!-- Hi, this is my source code -->
 		<title>Ignat's site</title>
+        <meta name="Description" content="This is Ignat's personal website">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="Description" content="This is Ignat's personal website">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Ignat">
+        <link href="stylesheets/normalize.css" media="screen, projection" rel="stylesheet" type="text/css"/>
 		<link href="stylesheets/ignat_styling.css" media="screen, projection" rel="stylesheet" type="text/css"/>
-		<script>
-		function dance(){
-			//TODO:fancy function
-		}
-		</script>
-
-	</head>
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
 	<body class="fullContainer noMargin">
-		<div class="fullContainer">	
-			<p id="Welcome" class="centered" onclick="">Hello Internet!<br> This webpage is in development by <a href="https://github.com/ignat980" title="My Github">Ignat</a></p>
-			<ul id="Features">
-				<strong>Current Site Features:</strong>
-			    <li>This site is viewable with every device</li>
-			    <li>Simple Color Pallette</li>
-			    <li>Straightforward UI</li>
-			    <li>Gradients</li>
-			    <li>Lists</li>
-			</ul>
-			<div id="smiley">
-				<p id="smileyText" class="centeredHorizontally">In an effort to improve User Experience, Here is a smiley face: <img id="smileyImg" src="images/Smiley-Face.png" alt="Hello says the face"></p>
-			</div>
+		<div class="fullContainer spaceBackground">
+		    <header>
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+	        <p id="Welcome" class="centered" onclick="">Hello Internet!<br> This webpage is in development by <a href="https://github.com/ignat980" title="My Github">Ignat</a>
+            </p>
+            <footer class="strechBottom">
+                <h3 style="margin-left:1em">About</h3>
+                <a style="margin-left:1em" href="https://docs.google.com/document/d/1F1P6feqkNjLMaGkOUJjrRht7rBgObllvjmCp8Cv5jN8/edit?usp=sharing">View My Resume</a>
+                <div id="smiley">
+    				<p id="smileyText" class="centeredHorizontally">In an effort to improve User Experience, Here is a smiley face: <img id="smileyImg" src="images/Smiley-Face.png" alt="Hello says the face"></p>
+    			</div>
+            </footer>
 		</div>
-		<!-- Lel get trackered -->
-		<!-- Trackerding disabled temporarily, as it had slowed down my webpage -->
-		<!--<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-61893763-1', 'auto');
-		ga('send', 'pageview');
-		</script>-->
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-61893763-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
 	</body>
 </html>
