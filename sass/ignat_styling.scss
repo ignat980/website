@@ -23,14 +23,28 @@
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
-
+@mixin textOutline($size, $color) {
+    text-shadow:
+    // 0px $size 0px $color,
+    // $size 0px 0px $color,
+    // 0px -$size 0px $color,
+    // -$size 0px 0px $color,
+    $size $size 0px $color,
+    -$size $size 0px $color,
+    $size $size - $size - $size 0px $color,
+    -$size $size - $size - $size 0px $color;
+}
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
 
 html {
     color: #FFF;
-    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+    text-stroke: 2, rgb(0, 0, 0);
+    // -webkit-text-stroke-width: 2px;
+    // -webkit-text-stroke-color: rgb(0,0,0);
+    @include textOutline(.06em, #000);
+    //text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -106,6 +120,17 @@ textarea {
     padding: 0.2em 0;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    #Welcome {
+        background-color: #96f5ff;
+    }
+}
+@media screen\0 {
+    #Welcome {
+        background-color: #96f5ff;
+    }
+}
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
@@ -121,6 +146,13 @@ textarea {
 
 :root {
 height:100vh;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: .15em solid #2a2afd;
+    border-radius: 1em;
+    color: #2a2afd;
 }
 
 .centeredHorizontally {
@@ -166,22 +198,20 @@ height:100vh;
 	padding: 1em;
 	font-size: 4vw;
 	// needs latest Compass, add '@import "compass"' to your scss
-	background-color: #96f5ff; // Old browsers
-	@include filter-gradient(#96f5ff, #ffffff, horizontal); // IE6-9 fallback on horizontal gradient
-	@include background-image(radial-gradient(center, ellipse farthest-side, #96f5ff,#ffffff));
+	@include filter-gradient(#96f5ff, rgba(255, 255, 255, 0), horizontal); // IE6-9 fallback on horizontal gradient
+	@include background-image(radial-gradient(center, ellipse farthest-side, #96f5ff, rgba(255, 255, 255, 0)));
 }
 
 #Welcome a {
-	text-decoration: none;
-	color: blue;
+
 }
 
 #smiley {
-	height: 3em;
+    position: initial;
 }
 
-#smileyImg {
-	height: 2em;
+#smileyText {
+	// height: 3em;
 }
 
 /* ==========================================================================

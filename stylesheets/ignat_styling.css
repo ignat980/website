@@ -17,10 +17,11 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-/* line 31, ../sass/ignat_styling.scss */
+/* line 41, ../sass/ignat_styling.scss */
 html {
   color: #FFF;
-  text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+  text-stroke: 2, black;
+  text-shadow: 0.06em 0.06em 0px #000, -0.06em 0.06em 0px #000, 0.06em -0.06em 0px #000, -0.06em -0.06em 0px #000;
   font-size: 1em;
   line-height: 1.4;
 }
@@ -32,13 +33,13 @@ html {
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
-/* line 46, ../sass/ignat_styling.scss */
+/* line 60, ../sass/ignat_styling.scss */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-/* line 51, ../sass/ignat_styling.scss */
+/* line 65, ../sass/ignat_styling.scss */
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -47,7 +48,7 @@ html {
 /*
  * A better looking default horizontal rule
  */
-/* line 60, ../sass/ignat_styling.scss */
+/* line 74, ../sass/ignat_styling.scss */
 hr {
   display: block;
   height: 1px;
@@ -62,7 +63,7 @@ hr {
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
-/* line 75, ../sass/ignat_styling.scss */
+/* line 89, ../sass/ignat_styling.scss */
 audio,
 canvas,
 iframe,
@@ -72,14 +73,14 @@ video {
   vertical-align: middle;
 }
 
-/* line 86, ../sass/ignat_styling.scss */
+/* line 100, ../sass/ignat_styling.scss */
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/* line 94, ../sass/ignat_styling.scss */
+/* line 108, ../sass/ignat_styling.scss */
 textarea {
   resize: vertical;
 }
@@ -87,7 +88,7 @@ textarea {
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
-/* line 102, ../sass/ignat_styling.scss */
+/* line 116, ../sass/ignat_styling.scss */
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -95,15 +96,36 @@ textarea {
   padding: 0.2em 0;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  /* line 125, ../sass/ignat_styling.scss */
+  #Welcome {
+    background-color: #96f5ff;
+  }
+}
+@media screen\0 {
+  /* line 130, ../sass/ignat_styling.scss */
+  #Welcome {
+    background-color: #96f5ff;
+  }
+}
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-/* line 122, ../sass/ignat_styling.scss */
+/* line 147, ../sass/ignat_styling.scss */
 :root {
   height: 100vh;
 }
 
-/* line 126, ../sass/ignat_styling.scss */
+/* line 151, ../sass/ignat_styling.scss */
+a {
+  text-decoration: none;
+  border-bottom: .15em solid #2a2afd;
+  border-radius: 1em;
+  color: #2a2afd;
+}
+
+/* line 158, ../sass/ignat_styling.scss */
 .centeredHorizontally, .centered {
   position: absolute;
   left: 50%;
@@ -118,7 +140,7 @@ textarea {
   margin-bottom: 0;
 }
 
-/* line 136, ../sass/ignat_styling.scss */
+/* line 168, ../sass/ignat_styling.scss */
 .centered {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -128,7 +150,7 @@ textarea {
   transform: translate(-50%, -50%);
 }
 
-/* line 142, ../sass/ignat_styling.scss */
+/* line 174, ../sass/ignat_styling.scss */
 .fullContainer {
   height: 100%;
   width: 100%;
@@ -136,59 +158,47 @@ textarea {
   /*position: relative;*/
 }
 
-/* line 149, ../sass/ignat_styling.scss */
+/* line 181, ../sass/ignat_styling.scss */
 .noMargin {
   margin: 0 0;
 }
 
-/* line 153, ../sass/ignat_styling.scss */
+/* line 185, ../sass/ignat_styling.scss */
 .strechBottom {
   width: 100%;
   position: absolute;
   bottom: 0;
 }
 
-/* line 159, ../sass/ignat_styling.scss */
+/* line 191, ../sass/ignat_styling.scss */
 .spaceBackground {
   background-image: url("../images/space.jpg");
 }
 
-/* line 163, ../sass/ignat_styling.scss */
+/* line 195, ../sass/ignat_styling.scss */
 #Welcome {
   /*margin: 0 auto;
   border-radius: 1em;*/
   padding: 1em;
   font-size: 4vw;
-  background-color: #96f5ff;
   *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#FF96F5FF', endColorstr='#FFFFFFFF');
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IiIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzk2ZjVmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#FF96F5FF', endColorstr='#00FFFFFF');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IiIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzk2ZjVmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
   background-size: 100%;
-  background-image: -moz-radial-gradient(center, ellipse farthest-side, #96f5ff, #ffffff);
-  background-image: -webkit-radial-gradient(center, ellipse farthest-side, #96f5ff, #ffffff);
-  background-image: radial-gradient(ellipse farthest-side at center, #96f5ff, #ffffff);
+  background-image: -moz-radial-gradient(center, ellipse farthest-side, #96f5ff, rgba(255, 255, 255, 0));
+  background-image: -webkit-radial-gradient(center, ellipse farthest-side, #96f5ff, rgba(255, 255, 255, 0));
+  background-image: radial-gradient(ellipse farthest-side at center, #96f5ff, rgba(255, 255, 255, 0));
 }
 
-/* line 174, ../sass/ignat_styling.scss */
-#Welcome a {
-  text-decoration: none;
-  color: blue;
-}
-
-/* line 179, ../sass/ignat_styling.scss */
+/* line 209, ../sass/ignat_styling.scss */
 #smiley {
-  height: 3em;
-}
-
-/* line 183, ../sass/ignat_styling.scss */
-#smileyImg {
-  height: 2em;
+  position: initial;
 }
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-/* line 194, ../sass/ignat_styling.scss */
+/* line 224, ../sass/ignat_styling.scss */
 .hidden {
   display: none !important;
 }
@@ -197,7 +207,7 @@ textarea {
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 203, ../sass/ignat_styling.scss */
+/* line 233, ../sass/ignat_styling.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -214,7 +224,7 @@ textarea {
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
-/* line 220, ../sass/ignat_styling.scss */
+/* line 250, ../sass/ignat_styling.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -225,7 +235,7 @@ textarea {
   width: auto;
 }
 
-/* line 233, ../sass/ignat_styling.scss */
+/* line 263, ../sass/ignat_styling.scss */
 .invisible {
   visibility: hidden;
 }
@@ -241,7 +251,7 @@ textarea {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 249, ../sass/ignat_styling.scss */
+/* line 279, ../sass/ignat_styling.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -250,7 +260,7 @@ textarea {
   /* 2 */
 }
 
-/* line 255, ../sass/ignat_styling.scss */
+/* line 285, ../sass/ignat_styling.scss */
 .clearfix:after {
   clear: both;
 }
@@ -272,7 +282,7 @@ textarea {
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 @media print {
-  /* line 283, ../sass/ignat_styling.scss */
+  /* line 313, ../sass/ignat_styling.scss */
   *,
   *:before,
   *:after,
@@ -286,18 +296,18 @@ textarea {
     text-shadow: none !important;
   }
 
-  /* line 295, ../sass/ignat_styling.scss */
+  /* line 325, ../sass/ignat_styling.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 300, ../sass/ignat_styling.scss */
+  /* line 330, ../sass/ignat_styling.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 304, ../sass/ignat_styling.scss */
+  /* line 334, ../sass/ignat_styling.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -306,13 +316,13 @@ textarea {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 313, ../sass/ignat_styling.scss */
+  /* line 343, ../sass/ignat_styling.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
-  /* line 318, ../sass/ignat_styling.scss */
+  /* line 348, ../sass/ignat_styling.scss */
   pre,
   blockquote {
     border: 1px solid #999;
@@ -323,23 +333,23 @@ textarea {
    * Printing Tables:
    * http://css-discuss.incutio.com/wiki/Printing_Tables
    */
-  /* line 329, ../sass/ignat_styling.scss */
+  /* line 359, ../sass/ignat_styling.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 333, ../sass/ignat_styling.scss */
+  /* line 363, ../sass/ignat_styling.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 338, ../sass/ignat_styling.scss */
+  /* line 368, ../sass/ignat_styling.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 342, ../sass/ignat_styling.scss */
+  /* line 372, ../sass/ignat_styling.scss */
   p,
   h2,
   h3 {
@@ -347,7 +357,7 @@ textarea {
     widows: 3;
   }
 
-  /* line 349, ../sass/ignat_styling.scss */
+  /* line 379, ../sass/ignat_styling.scss */
   h2,
   h3 {
     page-break-after: avoid;
