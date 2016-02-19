@@ -126,6 +126,31 @@ a {
 }
 
 /* line 158, ../sass/ignat_styling.scss */
+a:hover {
+  border-bottom-color: #48b2e8;
+}
+
+/* line 163, ../sass/ignat_styling.scss */
+header {
+  border-top: solid 8px #019cdb;
+}
+
+/* line 167, ../sass/ignat_styling.scss */
+.nav-item {
+  list-style: none;
+  display: inline;
+}
+
+/* line 173, ../sass/ignat_styling.scss */
+.niceSpacing {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin-left: 25%;
+}
+
+/* line 181, ../sass/ignat_styling.scss */
 .centeredHorizontally, .centered {
   position: absolute;
   left: 50%;
@@ -140,7 +165,7 @@ a {
   margin-bottom: 0;
 }
 
-/* line 168, ../sass/ignat_styling.scss */
+/* line 191, ../sass/ignat_styling.scss */
 .centered {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -150,7 +175,7 @@ a {
   transform: translate(-50%, -50%);
 }
 
-/* line 174, ../sass/ignat_styling.scss */
+/* line 197, ../sass/ignat_styling.scss */
 .fullContainer {
   height: 100%;
   width: 100%;
@@ -158,27 +183,35 @@ a {
   /*position: relative;*/
 }
 
-/* line 181, ../sass/ignat_styling.scss */
+/* line 204, ../sass/ignat_styling.scss */
 .noMargin {
   margin: 0 0;
 }
 
-/* line 185, ../sass/ignat_styling.scss */
+/* line 208, ../sass/ignat_styling.scss */
 .strechBottom {
   width: 100%;
   position: absolute;
   bottom: 0;
 }
 
-/* line 191, ../sass/ignat_styling.scss */
+/* line 214, ../sass/ignat_styling.scss */
 .spaceBackground {
   background-image: url("../images/space.jpg");
 }
 
-/* line 195, ../sass/ignat_styling.scss */
+/* line 218, ../sass/ignat_styling.scss */
+.resume {
+  margin-left: 1em;
+}
+
+/* line 222, ../sass/ignat_styling.scss */
+.footer {
+  font-size: 30px;
+}
+
+/* line 226, ../sass/ignat_styling.scss */
 #Welcome {
-  /*margin: 0 auto;
-  border-radius: 1em;*/
   padding: 1em;
   font-size: 4vw;
   *zoom: 1;
@@ -190,7 +223,7 @@ a {
   background-image: radial-gradient(ellipse farthest-side at center, #96f5ff, rgba(255, 255, 255, 0));
 }
 
-/* line 209, ../sass/ignat_styling.scss */
+/* line 240, ../sass/ignat_styling.scss */
 #smiley {
   position: initial;
 }
@@ -198,7 +231,7 @@ a {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-/* line 224, ../sass/ignat_styling.scss */
+/* line 255, ../sass/ignat_styling.scss */
 .hidden {
   display: none !important;
 }
@@ -207,7 +240,7 @@ a {
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 233, ../sass/ignat_styling.scss */
+/* line 264, ../sass/ignat_styling.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -224,7 +257,7 @@ a {
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
-/* line 250, ../sass/ignat_styling.scss */
+/* line 281, ../sass/ignat_styling.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -235,7 +268,7 @@ a {
   width: auto;
 }
 
-/* line 263, ../sass/ignat_styling.scss */
+/* line 294, ../sass/ignat_styling.scss */
 .invisible {
   visibility: hidden;
 }
@@ -251,7 +284,7 @@ a {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 279, ../sass/ignat_styling.scss */
+/* line 310, ../sass/ignat_styling.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -260,7 +293,7 @@ a {
   /* 2 */
 }
 
-/* line 285, ../sass/ignat_styling.scss */
+/* line 316, ../sass/ignat_styling.scss */
 .clearfix:after {
   clear: both;
 }
@@ -282,7 +315,7 @@ a {
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 @media print {
-  /* line 313, ../sass/ignat_styling.scss */
+  /* line 344, ../sass/ignat_styling.scss */
   *,
   *:before,
   *:after,
@@ -296,18 +329,18 @@ a {
     text-shadow: none !important;
   }
 
-  /* line 325, ../sass/ignat_styling.scss */
+  /* line 356, ../sass/ignat_styling.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 330, ../sass/ignat_styling.scss */
+  /* line 361, ../sass/ignat_styling.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 334, ../sass/ignat_styling.scss */
+  /* line 365, ../sass/ignat_styling.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -316,13 +349,13 @@ a {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 343, ../sass/ignat_styling.scss */
+  /* line 374, ../sass/ignat_styling.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
-  /* line 348, ../sass/ignat_styling.scss */
+  /* line 379, ../sass/ignat_styling.scss */
   pre,
   blockquote {
     border: 1px solid #999;
@@ -333,23 +366,23 @@ a {
    * Printing Tables:
    * http://css-discuss.incutio.com/wiki/Printing_Tables
    */
-  /* line 359, ../sass/ignat_styling.scss */
+  /* line 390, ../sass/ignat_styling.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 363, ../sass/ignat_styling.scss */
+  /* line 394, ../sass/ignat_styling.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 368, ../sass/ignat_styling.scss */
+  /* line 399, ../sass/ignat_styling.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 372, ../sass/ignat_styling.scss */
+  /* line 403, ../sass/ignat_styling.scss */
   p,
   h2,
   h3 {
@@ -357,7 +390,7 @@ a {
     widows: 3;
   }
 
-  /* line 379, ../sass/ignat_styling.scss */
+  /* line 410, ../sass/ignat_styling.scss */
   h2,
   h3 {
     page-break-after: avoid;
