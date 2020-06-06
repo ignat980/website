@@ -1,3 +1,2 @@
-# html-portfolio
-This is Ignat's website/portfolio.
-The link is http://ignat.space.
+# Html-portfolio
+This is Ignat Remizov's personal website and portfolio.
