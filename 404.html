@@ -1,60 +1,250 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Page Not Found</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-
-        * {
-            line-height: 1.2;
-            margin: 0;
-        }
-
-        html {
-            color: #888;
-            display: table;
-            font-family: sans-serif;
-            height: 100%;
-            text-align: center;
-            width: 100%;
-        }
-
-        body {
-            display: table-cell;
-            vertical-align: middle;
-            margin: 2em auto;
-        }
-
-        h1 {
-            color: #555;
-            font-size: 2em;
-            font-weight: 400;
-        }
-
-        p {
-            margin: 0 auto;
-            width: 280px;
-        }
-
-        @media only screen and (max-width: 280px) {
-
-            body, p {
-                width: 95%;
-            }
-
-            h1 {
-                font-size: 1.5em;
-                margin: 0 0 0.3em;
-            }
-
-        }
-
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 - Lost in Space</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+      z-index: 0;
+    }
+    
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+    
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.6);
+      will-change: opacity;
+    }
+    
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+    
+    .container {
+      text-align: center;
+      z-index: 100;
+      padding: 20px;
+      max-width: 600px;
+      position: relative;
+    }
+    
+    .error-code {
+      font-size: 180px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+      animation: float 4s ease-in-out infinite;
+      will-change: transform;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    .message {
+      font-size: 20px;
+      margin-bottom: 40px;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+    
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-primary {
+      background: rgba(255, 255, 255, 0.9);
+      color: #667eea;
+    }
+    
+    .btn-primary:hover {
+      background: #fff;
+    }
+    
+    .astronaut {
+      font-size: 80px;
+      margin-bottom: 20px;
+      display: inline-block;
+      position: absolute;
+      top: 50px;
+      animation: marquee 12s linear infinite;
+      will-change: transform;
+    }
+    
+    @keyframes marquee {
+      from { 
+        left: -100px;
+        transform: rotate(0deg);
+      }
+      to { 
+        left: calc(100% + 100px);
+        transform: rotate(360deg);
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .error-code {
+        font-size: 120px;
+      }
+      
+      h1 {
+        font-size: 32px;
+      }
+      
+      .message {
+        font-size: 18px;
+      }
+      
+      .astronaut {
+        font-size: 60px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Page Not Found</h1>
-    <p>Sorry, but the page you were trying to view does not exist.</p>
+  <div class="stars" id="stars"></div>
+  
+  <div class="container">
+    <div class="astronaut">🚀</div>
+    <div class="error-code">404</div>
+    <h1>Houston, we have a problem!</h1>
+    <p class="message">
+      This page has drifted off into deep space.<br>
+      Let's get you back home.
+    </p>
+    <div class="buttons">
+      <a id="home" href="/" class="btn btn-primary">Take Me Home</a>
+      <button onclick="history.back()" class="btn">Go Back</button>
+    </div>
+  </div>
+
+  <script>
+    // Create starfield
+    const starsContainer = document.getElementById('stars');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      
+      // Only animate 40% of stars to reduce CPU usage
+      if (Math.random() > 0.6) {
+        star.style.animation = 'twinkle ' + (2 + Math.random() * 2) + 's infinite';
+        star.style.animationDelay = Math.random() * 3 + 's';
+      } else {
+        star.style.opacity = 0.6 + Math.random() * 0.3;
+      }
+      
+      // Vary star sizes for depth
+      const size = Math.random() * 2 + 1;
+      star.style.width = size + 'px';
+      star.style.height = size + 'px';
+      
+      // Some stars are brighter (static, no animation)
+      const brightness = Math.random();
+      if (brightness > 0.85) {
+        star.style.boxShadow = '0 0 6px 2px rgba(255, 255, 255, 0.8)';
+      } else if (brightness > 0.7) {
+        star.style.boxShadow = '0 0 5px 1px rgba(255, 255, 255, 0.7)';
+      }
+      starsContainer.appendChild(star);
+    }
+    
+    // Redirect logic for GitHub Pages
+    (function () {
+      // For local development, use index.html
+      if (window.location.protocol === 'file:' || 
+          window.location.hostname === 'localhost' || 
+          window.location.hostname === '127.0.0.1') {
+        document.getElementById('home').setAttribute('href', 'index.html');
+        return;
+      }
+      
+      var parts = window.location.pathname.split('/').filter(Boolean);
+      var base = '/';
+      if (parts.length > 0) base = '/' + parts[0] + '/';
+      
+      var looksLikeProject = window.location.hostname.endsWith('github.io') && parts.length > 0;
+      var target = looksLikeProject ? base : '/';
+      document.getElementById('home').setAttribute('href', target);
+      
+      // Auto-redirect after 5 seconds instead of immediately
+      setTimeout(function() {
+        window.location.replace(target);
+      }, 5000);
+    })();
+  </script>
 </body>
 </html>
-<!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->
